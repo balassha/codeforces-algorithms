@@ -1,0 +1,31 @@
+package main
+
+import (
+    "fmt"
+    "strconv"
+    "os"
+    "bufio"
+    "strings"
+    )
+    
+func main(){
+    var num,res int
+    fmt.Scanf("%d",&num)
+    scanner := bufio.NewScanner(os.Stdin)
+    for scanner.Scan() {
+        var tArr []string
+        tArr = strings.Split(scanner.Text()," ")
+        var val int
+        for _,v := range tArr{
+            t,_:= strconv.Atoi(v)
+            val += t
+        }
+        if val>1 {
+            res++
+        }
+    }
+    if err := scanner.Err(); err != nil {
+	    fmt.Println(err)
+    }
+    fmt.Println(res)
+}
