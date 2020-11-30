@@ -1,0 +1,30 @@
+package main
+
+import (
+    "fmt"
+    "strconv"
+    "os"
+    "bufio"
+    )
+    
+func main(){
+    var num int
+    var arr []string
+    fmt.Scanf("%d",&num)
+    scanner := bufio.NewScanner(os.Stdin)
+    for scanner.Scan() {
+        arr = append(arr,scanner.Text()) 
+    }
+    if err := scanner.Err(); err != nil {
+	    fmt.Println(err)
+    }
+    for _,v := range arr{
+        
+        l := len(v)
+        if l>10{
+            fmt.Println(string(v[0])+strconv.Itoa(l-2)+string(v[l-1]))    
+        }else{
+            fmt.Println(v)
+        }   
+    }
+}
