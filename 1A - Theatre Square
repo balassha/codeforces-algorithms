@@ -1,0 +1,22 @@
+package main
+
+import (
+    "fmt"
+    )
+    
+func main(){
+    var m,n,a int
+    fmt.Scanf("%d %d %d",&m,&n,&a)
+    var countn,countm int64
+    countn=int64(n/a)
+    countm=int64(m/a)
+
+    if n%a != 0 {
+        countn++        
+    }
+    if(m%a != 0){
+        countm++;      
+    }
+
+    fmt.Println(countn*countm);
+}
